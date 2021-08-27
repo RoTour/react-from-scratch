@@ -1,17 +1,19 @@
 import { FC } from 'react';
 import Button from '../../../components/Button/Button';
 
-type ContinentFilterProps = {}
+type ContinentFilterProps = {
+  setFilter: (newFilter: string) => void,
+}
 
-const ContinentFilter: FC<ContinentFilterProps> = () => {
+const ContinentFilter: FC<ContinentFilterProps> = (props) => {
   return <>
     <div className={"col text-center"}>
-      <Button onClick={() => null}>All</Button>
-      <Button onClick={() => null}>Europe</Button>
-      <Button onClick={() => null}>Africa</Button>
-      <Button onClick={() => null}>Asia</Button>
-      <Button onClick={() => null}>America</Button>
-      <Button onClick={() => null}>Oceania</Button>
+      <Button onClick={() => props.setFilter("all")}>All</Button>
+      <Button onClick={() => props.setFilter("region/europe")}>Europe</Button>
+      <Button onClick={() => props.setFilter("region/africa")}>Africa</Button>
+      <Button onClick={() => props.setFilter("region/asia")}>Asia</Button>
+      <Button onClick={() => props.setFilter("region/americas")}>America</Button>
+      <Button onClick={() => props.setFilter("region/oceania")}>Oceania</Button>
     </div>
   </>;
 };

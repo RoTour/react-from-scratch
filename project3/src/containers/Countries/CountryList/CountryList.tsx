@@ -27,7 +27,6 @@ const CountryList: FC<CountryListProps> = (props) => {
         const newCountries = data.map(({ name, capital, flag, region }) => ({ name, capital, region, flagUrl: flag }));
         console.log(newCountries);
         setCountries(newCountries);
-        console.log(countries);
         setVisibleCountries(newCountries.slice(0, 10));
         setLoading(false);
       })

@@ -19,7 +19,7 @@ const CountryList: FC<CountryListProps> = (props) => {
   const [visibleCountries, setVisibleCountries] = useState<CountryData[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
-  const fetchData = () => {
+  useEffect(() => {
     const url = `https://restcountries.eu/rest/v2/${props.filter}?fields=name;capital;region;flag`;
     setLoading(true);
     axios.get(url)
@@ -35,11 +35,6 @@ const CountryList: FC<CountryListProps> = (props) => {
         console.log(e);
         setLoading(false);
       });
-  }
-
-  useEffect(() => {
-    console.log("called use effect");
-    fetchData();
   }, [props.filter]);
 
 

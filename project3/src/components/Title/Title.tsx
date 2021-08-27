@@ -4,7 +4,7 @@ type TitleProps = {}
 
 const Title: FC<TitleProps> = () => {
   return <>
-    <h1>Countries List</h1>
+    <h1 className={"col text-center bg-info text-white p-3"}>Countries List</h1>
   </>;
 };
 

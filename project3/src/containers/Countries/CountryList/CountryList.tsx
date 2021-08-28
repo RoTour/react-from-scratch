@@ -5,6 +5,7 @@ import Pagination from '../Pagination/Pagination';
 
 type CountryListProps = {
   filter: string,
+  path: string
 }
 
 export type CountryData = {
@@ -44,7 +45,7 @@ const CountryList: FC<CountryListProps> = (props) => {
         ? <div className="spinner-border text-info" role="status">
             <span className="visually-hidden">Loading...</span>
           </div>
-        : visibleCountries.map((it, index) => <CountryCard key={index} countryData={it}/>)}
+        : visibleCountries.map((it, index) => <CountryCard key={index} countryData={it} path={props.path}/>)}
     </div>
     <Pagination nbResult={countries.length} countries={countries} setVisibleCountries={setVisibleCountries} />
   </>;

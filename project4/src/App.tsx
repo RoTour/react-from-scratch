@@ -1,15 +1,12 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
   return <>
     <BrowserRouter>
-      <div>
-        <NavLink exact={true} to={"/"}>HomePage</NavLink>
-        <NavLink exact={true} to={"/localisation"}>Localisation</NavLink>
-        <NavLink exact={true} to={"/contact-us"}>Contact</NavLink>
-      </div>
+      <Navbar/>
       <Switch>
         <Route path={"/"} exact={true} render={() => <div>HomePage</div>}/>
         <Route path={"/localisation"} exact={true} render={() => <div>Localisation</div>}/>

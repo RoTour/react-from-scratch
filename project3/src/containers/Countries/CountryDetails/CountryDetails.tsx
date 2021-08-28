@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { FC, useEffect, useState } from 'react';
+import { useHistory } from 'react-router';
 import CountryCard from '../CountryCard/CountryCard';
 import { CountryData } from '../CountryList/CountryList';
 
@@ -10,6 +11,7 @@ type CountryDetailsProps = {
 const CountryDetails: FC<CountryDetailsProps> = (props) => {
   const [countryData, setCountryData] = useState<CountryData | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
+  const history = useHistory();
 
   useEffect(() => {
     setLoading(true);
@@ -21,8 +23,9 @@ const CountryDetails: FC<CountryDetailsProps> = (props) => {
       .catch((error) => {
         console.log(error);
         setLoading(false)
+        history.push("/404")
       });
-  }, [props.countryName])
+  }, [props.countryName, history])
 
   return <>
     {!loading && countryData && <div className={"container"}>

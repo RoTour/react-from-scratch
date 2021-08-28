@@ -5,7 +5,7 @@ import styles from "./Navbar.module.css"
 type NavbarProps = {}
 
 const Navbar: FC<NavbarProps> = () => {
-  return <nav className="navbar navbar-expand-lg navbar-info bg-info mb-3">
+  return <nav className="navbar navbar-expand-lg navbar-info bg-info">
     <div className="container-fluid">
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
               aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
